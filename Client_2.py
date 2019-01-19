@@ -15,7 +15,9 @@
 
 import base64
 import cv2
+import io
 import numpy as np
+from PIL import Image
 
 
 if __name__ == "__main__":
@@ -32,3 +34,7 @@ if __name__ == "__main__":
     img = cv2.imdecode(img_array, cv2.COLOR_BGR2RGB)
 
     cv2.imwrite("kkk2.jpeg", img)
+
+    image = io.BytesIO(base64_decode)
+    img = Image.open(image)
+    img.save("kkk3.jpeg")
